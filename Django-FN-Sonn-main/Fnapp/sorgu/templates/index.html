@@ -1,0 +1,72 @@
+{% load static   %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+   crossorigin="anonymous">
+  
+  <title>NewsDetect</title>
+</head>
+ <body>
+
+  {% include 'partials/_navbar.html' %}
+ 
+
+  <div class = "container-fluid mt-3"  >
+   <div class="row">
+
+
+
+    <form class="row g-6" action="" method="POST">
+       {% csrf_token %}
+
+           <!-- kullanıcının dataseti seçmesi için select list oluşturuyoruz   -->
+           <div class="container ">
+            <div class="row mt-4">
+              <div class="col-md-2">
+
+              </div>
+              <div class="col-md-4">
+                <h5> Sahte Haber Tespit Uygulaması Nasıl Kullanılır?</h5>
+                <p> Sahte haber tespit uygulaması öncesinde geliştirilmiş bir yapay zeka modelini kullanarak girdiğiniz haber metninin gerçek yada sahte olduğunu tahmin eder.
+                  Bu aşamada yapay zeka modeli oluşturulma aşamasında kendisinin eğitildiği verilere göre bu tahminleri yürütür şuan için yalnızca
+                  "World-News", "PoliticsNews", "GovernmentNews", "Middle-east", "US-News",Politics" haber konularında etkili tahminler yürütebilmektedir. 
+                  Unutmayın bu uygulama şuan için sadece İngilizce dil desteğine sahiptir. Lütfen etkili tahminler için haber metnini ingilizce seçiniz.
+                    <h3 style= "color:red"> Not: !Bu uygulama sayesinde yalnızca önceden eğitilmiş yapay zeka modelleri kullanılarak tahminler elde edilmektedir buradaki işlemin bir tahmin/varsayım olduğunu unutmayınız. </h3>
+              </div>
+
+              <div class="col-md-4">
+
+                <div class="col-9" style="text-align:left"> 
+                  {% include 'partials/_input.html' %}
+                </div>
+
+              <div class="col-md-2">
+
+              </div>
+
+            </div>
+          </div>
+    </form>
+   </div>
+</div>
+
+
+ </body>
+</html>
+
+
+
+
+
+
+
+

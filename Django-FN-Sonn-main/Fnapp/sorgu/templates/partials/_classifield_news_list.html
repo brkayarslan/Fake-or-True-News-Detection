@@ -1,0 +1,44 @@
+{% load static %}
+
+
+
+
+    <div class="container">
+      <div class="row mt-4">
+
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+
+          <div class="card text-center" >
+            <div class="card-header" style="background-color: {% if k.news_Label %}green{% else %}red{% endif %}">
+              <h4 style="color:#ffffff">
+
+
+                {% if k.news_Label == 0 %}Sahte{% else %}Gerçek{% endif %}
+
+              </h4>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{k.news_Title}}</h5>
+              <p class="card-text">{{k.short_Text}}</p>
+              <a href="{% url 'news_detail' k.id %}" class="btn btn-primary">Detay</a>
+            </div>
+            
+            <div class="card-footer text-muted">
+                {% if k.news_Label == 0 %}Sahte{% else %}Gerçek{% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
